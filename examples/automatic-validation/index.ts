@@ -1,8 +1,11 @@
 import "reflect-metadata";
 import { ApolloServer } from "apollo-server";
 import { buildSchema } from "../../src";
-
+import { useContainer } from "class-validator";
+import Container from "typedi";
 import { RecipeResolver } from "./recipe-resolver";
+
+useContainer(Container);
 
 async function bootstrap() {
   // build TypeGraphQL executable schema
